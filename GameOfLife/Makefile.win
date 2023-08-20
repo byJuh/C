@@ -1,0 +1,37 @@
+# Project: JVida - JJIB
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Jvida_JJIB_Projeto.o Jvida_JJIB_Model.o Jvida_JJIB_Controller.o Jvida_JJIB_View.o
+LINKOBJ  = Jvida_JJIB_Projeto.o Jvida_JJIB_Model.o Jvida_JJIB_Controller.o Jvida_JJIB_View.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = "JVida - JJIB.exe"
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Jvida_JJIB_Projeto.o: Jvida_JJIB_Projeto.c
+	$(CC) -c Jvida_JJIB_Projeto.c -o Jvida_JJIB_Projeto.o $(CFLAGS)
+
+Jvida_JJIB_Model.o: Jvida_JJIB_Model.c
+	$(CC) -c Jvida_JJIB_Model.c -o Jvida_JJIB_Model.o $(CFLAGS)
+
+Jvida_JJIB_Controller.o: Jvida_JJIB_Controller.c
+	$(CC) -c Jvida_JJIB_Controller.c -o Jvida_JJIB_Controller.o $(CFLAGS)
+
+Jvida_JJIB_View.o: Jvida_JJIB_View.c
+	$(CC) -c Jvida_JJIB_View.c -o Jvida_JJIB_View.o $(CFLAGS)
